@@ -46,19 +46,29 @@ This is a full-stack **Registration and Login** system built with the **MERN sta
 
 ### 🧾 Register Page
 ![Register Page](client/public/screenshots/register_validation.png)  
-> New users can sign up using this form.
+> New users can sign up using this form. User data is stored in a database, the password is hashed using bcrypt
 
 ---
 
 ### 🏠 Home Page
 ![Home Page](client/public/screenshots/home-page.png)  
-> The default landing page after opening the application. log out
+> A token is issued after entering the application, to verify permission when navigating to other pages
 
 ---
 
 ### 🔑 Security 
 ![Login Page](client/public/screenshots/login-validation.png)  
-> The login page only allows existing users to access the home page.
+> If a user tries to access the site without permission, it redirects them to the /login page
+> client/src/pages/PrivateRoute.jsx
+
+import { Navigate, Outlet } from "react-router-dom";
+
+const PrivateRoute = () => {
+   const token = localStorage.getItem("token"); 
+   return token ? <Outlet /> : <Navigate to="/login" replace />;
+};
+
+export default PrivateRoute;
 
 ---
 
@@ -77,17 +87,6 @@ This is a full-stack **Registration and Login** system built with the **MERN sta
 ### 🔒 Set New Password Page
 ![New Password Page](client/public/screenshots/new-password.png)  
 > Users can create a new password after successful verification.
-
----
-
-## 📁 Folder Structure
-
-```bash
-├── client/               # React frontend
-│   └── public/screenshots/   # Screenshots used in README
-├── server/               # Express backend
-├── .env                  # Environment variables
-├── README.md
 
 ---
 
