@@ -39,13 +39,13 @@ This is a full-stack **Registration and Login** system built with the **MERN sta
 ---
 
 ### 🔑 Login Page
-![Login Page](client/public/screenshots/login-validation.png)  
+![Login Page](client/public/screenshots/login_validation.png)  
 > The login page only allows existing users to access the home page.
 
 ---
 
 ### 🧾 Register Page
-![Register Page](client/public/screenshots/register-page.png)  
+![Register Page](client/public/screenshots/register_validation.png)  
 > New users can sign up using this form.
 
 ---
