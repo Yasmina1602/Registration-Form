@@ -16,7 +16,7 @@ const VerifyCode = () => {
       alert(response.data.message);
       navigate('/newPass');
     } catch (err) {
-      console.error("Xato:", err.response ? err.response.data : err.message);
+      console.error("Error message:", err.response ? err.response.data : err.message);
       setError(err.response ? err.response.data.message : err.message);
     }
   }

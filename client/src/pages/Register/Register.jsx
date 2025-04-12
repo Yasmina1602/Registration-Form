@@ -24,16 +24,16 @@ function Register() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Register xatolik!")
+        throw new Error(data.message || "Register error!")
       }
 
       localStorage.setItem("token", data.token);
-      console.log("Token saqlandi:", data.token);
+      console.log("Token saved:", data.token);
 
       navigate('/home');
     }
     catch (err) {
-      console.error("Server yoki tarmoq xatosi:", err); // Faqat katta xatoliklarni chiqaramiz
+      console.error("Server or network error:", err); // Faqat katta xatoliklarni chiqaramiz
       setError(err.message);
     }
   }
@@ -57,7 +57,7 @@ function Register() {
           <div className="field">
             <input
               type="email"
-              placeholder="Emailni kiriting"
+              placeholder="Email"
               value={email}
               onChange={(e) => setemail(e.target.value)}
               required />

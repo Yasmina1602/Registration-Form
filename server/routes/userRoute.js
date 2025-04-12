@@ -10,10 +10,10 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email })
-    if (!user) return res.status(400).json({ message: 'Foydalanuvchi topilmadi' })
+    if (!user) return res.status(400).json({ message: "user doesn't exist!"})
 
     const isMatch = await bcrypt.compare(password, user.password)
-    if (!isMatch) return res.status(400).json({ message: "Noto'g'ri parol" });
+    if (!isMatch) return res.status(400).json({ message: "incorrect password!" });
 
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
@@ -23,7 +23,7 @@ router.post('/login', async (req, res) => {
   }
   catch (err) {
     console.log("Server error:", err);
-    res.status(500).json({ message: 'Serverda /login xatolik' });
+    res.status(500).json({ message: 'Server /login error' });
   }
 });
 
@@ -33,11 +33,11 @@ router.post("/register", async (req, res) => {
 
     const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res.status(400).json({ message: "Bu username allaqachon mavjud!" });
+      return res.status(400).json({ message: "This username already exists!" });
     }
     
     const existingEmail = await User.findOne({ email });
-    if (existingEmail) return res.status(400).json({ message: "Bu email allaqachon mavjud!" });
+    if (existingEmail) return res.status(400).json({ message: "This email already exists!" });
 
     const hashPass = await bcrypt.hash(password, 10)
     const newUser = new User({ username, email, password: hashPass })
@@ -52,7 +52,7 @@ router.post("/register", async (req, res) => {
   }
   catch (err) {
     console.log("Server error:", err);
-    res.status(500).json({ message: 'Serverda /register xatolik' });
+    res.status(500).json({ message: 'Server /register error' });
   }
 })
 

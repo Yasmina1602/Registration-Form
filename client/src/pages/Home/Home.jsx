@@ -5,13 +5,13 @@ function Home() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Tokenni o‘chiramiz
-    navigate("/login"); // Login sahifasiga yo‘naltiramiz
+    localStorage.removeItem("token"); 
+    navigate("/login"); 
   };
 
   return (
     <>
-      <div>Bosh sahifa</div>
+      <div>Home page</div>
       <button className='btn mx-20' onClick={handleLogout}>Log out</button>
     </>
   );

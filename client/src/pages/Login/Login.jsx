@@ -26,20 +26,20 @@ function Login() {
          try {
             data = JSON.parse(text);  // **JSON parse qilish**
          } catch {
-            throw new Error("Server noto'g'ri javob qaytardi: " + text);
+            throw new Error("The server returned an incorrect response!" + text);
          }
 
          if (!response.ok) {
-            throw new Error(data.message || "Login xatolik!")
+            throw new Error(data.message || "Login error!")
          }
 
          localStorage.setItem("token", data.token);
-         console.log("Token saqlandi:", data.token);
+         console.log("Token saved:", data.token);
 
          navigate('/home');
       }
       catch (err) {
-         console.error("Server yoki tarmoq xatosi:", err); // **Faqat katta xatoliklarni chiqaramiz**
+         console.error("Server or network error:", err); // **Faqat katta xatoliklarni chiqaramiz**
          setError(err.message);
       }
    }

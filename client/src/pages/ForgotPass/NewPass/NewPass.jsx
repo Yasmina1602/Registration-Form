@@ -17,7 +17,7 @@ const NewPass = () => {
       alert(response.data.message);
       navigate('/login');
     } catch (err) {
-      console.error("Xato:", err.response ? err.response.data : err.message);
+      console.error("Error message:", err.response ? err.response.data : err.message);
       setError(err.response ? err.response.data.message : err.message);
     }
   }
