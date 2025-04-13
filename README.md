@@ -33,7 +33,7 @@ This is a full-stack **Registration and Login** system built with the **MERN sta
 ---
 
 ## 📸 App views
-![App Page](https://raw.githubusercontent.com/Yasmina1602/Registration-Form/main/client/public/screenshots/full-page.png)  
+![App Page](client/public/screenshots/full-page.png)  
 > All pages in the project
 
 ---
@@ -85,6 +85,24 @@ export default PrivateRoute;
 ### 🔒 Set New Password Page
 ![New Password Page](client/public/screenshots/new-password.png)  
 > You can update your password in the system via the password sent to your email.
+
+---
+
+### 📧 Nodemailer Integration
+> Nodemailer library is designed for sending emails. Mail settings are edited and the sending function is performed in the backend.
+![Nodemailer Setup](client/public/screenshots/nodemailer1.png)
+> First, you must have 2-step verification enabled.
+---
+![Nodemailer Setup](client/public/screenshots/nodemailer2.png)  
+> Search for "app password" in the search field.
+---
+![Nodemailer Setup](client/public/screenshots/nodemailer3.png)  
+> Create a new space for the app and you will be given a password. Don't show it to anyone.
+```bash
+# Edit server/.env file and add your "email" and "app password"
+USER_EMAIL=your_email@gmail.com
+APP_PASSWORD=your_app_password //example: bxcl bcho xflu aoqm
+```
 
 ---
 
