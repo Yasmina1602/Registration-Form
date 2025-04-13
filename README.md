@@ -33,7 +33,7 @@ This is a full-stack **Registration and Login** system built with the **MERN sta
 ---
 
 ## 📸 App views
-![App Page's](client/public/screenshots/full-page.png)  
+![App Page's](https://raw.githubusercontent.com/Yasmina1602/Registration-Form/client/public/screenshots/full-page.png)  
 > All pages in the project
 
 ---
