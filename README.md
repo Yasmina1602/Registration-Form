@@ -57,7 +57,6 @@ This is a full-stack **Registration and Login** system built with the **MERN sta
 ---
 
 ### 🔑 Security 
-![Security](client/public/screenshots/security.png)  
 > If a user tries to access the site without permission, it redirects them to the /login page
 ```bash
 // client/src/pages/PrivateRoute.jsx
