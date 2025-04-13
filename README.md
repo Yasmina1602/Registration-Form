@@ -90,6 +90,7 @@ export default PrivateRoute;
 
 ### 📧 Nodemailer Integration
 > Nodemailer library is designed for sending emails. Mail settings are edited and the sending function is performed in the backend.
+---
 ![Nodemailer Setup](client/public/screenshots/nodemailer1.png)
 > First, you must have 2-step verification enabled.
 ---
@@ -98,6 +99,7 @@ export default PrivateRoute;
 ---
 ![Nodemailer Setup](client/public/screenshots/nodemailer3.png)  
 > Create a new space for the app and you will be given a password. Don't show it to anyone.
+---
 ```bash
 # Edit server/.env file and add your "email" and "app password"
 USER_EMAIL=your_email@gmail.com
